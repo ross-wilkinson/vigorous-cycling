@@ -14,34 +14,64 @@ resDir = [expDir '/results'];
 %% Load data
 cd(datDir)
 
-t_ba = readtable('2021_06_18_14_15_23.csv');
-t_n1 = readtable('2021_06_18_14_20_37.csv');
-t_n2 = readtable('2021_06_18_14_25_44.csv');
-t_r1 = readtable('2021_06_18_14_34_13.csv');
-t_n3 = readtable('2021_06_18_14_40_57.csv');
-t_n4 = readtable('2021_06_18_14_45_20.csv');
-t_r2 = readtable('2021_06_18_14_51_05.csv');
-t_tt = readtable('2021_06_18_14_57_10.csv');
+t_ba = readtable('2021_07_07_13_21_15.csv');
+t_n1 = readtable('2021_07_07_13_24_23.csv');
+t_n2 = readtable('2021_07_07_13_29_25.csv');
+t_r1 = readtable('2021_07_07_13_35_17.csv');
+t_n3 = readtable('2021_07_07_13_42_44.csv');
+t_n4 = readtable('2021_07_07_13_50_01.csv');
+t_r2 = readtable('2021_07_07_13_54_07.csv');
+t_tt = readtable('2021_07_07_13_59_11.csv');
 
 %% Calculate finishing times
 distance = 0.4;
 
-k_ba = t_ba.km > distance;
-time_ba = min(t_ba.secs(k_ba));
-k_n1 = t_n1.km > distance;
-time_n1 = min(t_n1.secs(k_n1));
-k_n2 = t_n2.km > distance;
-time_n2 = min(t_n2.secs(k_n2));
-k_r1 = t_r1.km > distance;
-time_r1 = min(t_r1.secs(k_r1));
-k_n3 = t_n3.km > distance;
-time_n3 = min(t_n3.secs(k_n3));
-k_n4 = t_n4.km > distance;
-time_n4 = min(t_n4.secs(k_n4));
-k_r2 = t_r2.km > distance;
-time_r2 = min(t_r2.secs(k_r2));
-k_tt = t_tt.km > distance;
-time_tt = min(t_tt.secs(k_tt));
+k_ba_start = find(t_ba.km > 0, 1, 'first');
+k_ba_end = find(t_ba.km > distance, 1, 'first');
+time_ba = t_ba.secs(k_ba_end) - t_ba.secs(k_ba_start);
+
+k_n1_start = find(t_n1.km > 0, 1, 'first');
+k_n1_end = find(t_n1.km > distance, 1, 'first');
+time_n1 = t_n1.secs(k_n1_end) - t_n1.secs(k_n1_start);
+
+k_n2_start = find(t_n2.km > 0, 1, 'first');
+k_n2_end = find(t_n2.km > distance, 1, 'first');
+time_n2 = t_n2.secs(k_n2_end) - t_n2.secs(k_n2_start);
+
+k_r1_start = find(t_r1.km > 0, 1, 'first');
+k_r1_end = find(t_r1.km > distance, 1, 'first');
+time_r1 = t_r1.secs(k_r1_end) - t_r1.secs(k_r1_start);
+
+k_n3_start = find(t_n3.km > 0, 1, 'first');
+k_n3_end = find(t_n3.km > distance, 1, 'first');
+time_n3 = t_n3.secs(k_n3_end) - t_n3.secs(k_n3_start);
+
+k_n4_start = find(t_n4.km > 0, 1, 'first');
+k_n4_end = find(t_n4.km > distance, 1, 'first');
+time_n4 = t_n4.secs(k_n4_end) - t_n4.secs(k_n4_start);
+
+k_r2_start = find(t_r2.km > 0, 1, 'first');
+k_r2_end = find(t_r2.km > distance, 1, 'first');
+time_r2 = t_r2.secs(k_r2_end) - t_r2.secs(k_r2_start);
+
+k_tt_start = find(t_tt.km > 0, 1, 'first');
+k_tt_end = find(t_tt.km > distance, 1, 'first');
+time_tt = t_tt.secs(k_tt_end) - t_tt.secs(k_tt_start);
+
+% k_n1 = t_n1.km > distance;
+% time_n1 = min(t_n1.secs(k_n1));
+% k_n2 = t_n2.km > distance;
+% time_n2 = min(t_n2.secs(k_n2));
+% k_r1 = t_r1.km > distance;
+% time_r1 = min(t_r1.secs(k_r1));
+% k_n3 = t_n3.km > distance;
+% time_n3 = min(t_n3.secs(k_n3));
+% k_n4 = t_n4.km > distance;
+% time_n4 = min(t_n4.secs(k_n4));
+% k_r2 = t_r2.km > distance;
+% time_r2 = min(t_r2.secs(k_r2));
+% k_tt = t_tt.km > distance;
+% time_tt = min(t_tt.secs(k_tt));
 
 %% Set color palette
 cBA = [25 25 25]/255;
@@ -262,7 +292,7 @@ hold on
 scatter(2, trq_n1, 80, cN1, 'filled')
 scatter(3, trq_n2, 80, cN1, 'filled')
 scatter(4, trq_r1, 80, cR1, 'filled')
-scatter(5, trq_n3, 80, cN1, 'filled')
+scatter(5, trq_n3, 80, cN2, 'filled')
 scatter(6, trq_n4, 80, cN1, 'filled')
 scatter(7, trq_r2, 80, cR1, 'filled')
 scatter(8, trq_tt, 80, cTT, 'filled')
@@ -288,8 +318,8 @@ ylabel('Mean Torque (N m)')
 
 %% Export figures
 cd(resDir)
-export_fig(fig1,'fig_pilot04_finishingTimes','-png','-eps','-cmyk','-r600')
-export_fig(fig2,'fig_pilot04_timeSeries','-png','-eps','-cmyk','-r600')
-export_fig(fig3,'fig_pilot04_meanCadence','-png','-eps','-cmyk','-r600')
-export_fig(fig4,'fig_pilot04_meanPower','-png','-eps','-cmyk','-r600')
-export_fig(fig5,'fig_pilot04_meanTorque','-png','-eps','-cmyk','-r600')
+export_fig(fig1,'fig_pilot06_finishingTimes','-png','-eps','-cmyk','-r600')
+export_fig(fig2,'fig_pilot06_timeSeries','-png','-eps','-cmyk','-r600')
+export_fig(fig3,'fig_pilot06_meanCadence','-png','-eps','-cmyk','-r600')
+export_fig(fig4,'fig_pilot06_meanPower','-png','-eps','-cmyk','-r600')
+export_fig(fig5,'fig_pilot06_meanTorque','-png','-eps','-cmyk','-r600')
