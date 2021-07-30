@@ -14,14 +14,14 @@ resDir = [expDir '/results'];
 %% Load data
 cd(datDir)
 
-t_ba = readtable('2021_06_18_14_15_23.csv');
-t_n1 = readtable('2021_06_18_14_20_37.csv');
-t_n2 = readtable('2021_06_18_14_25_44.csv');
-t_r1 = readtable('2021_06_18_14_34_13.csv');
-t_n3 = readtable('2021_06_18_14_40_57.csv');
-t_n4 = readtable('2021_06_18_14_45_20.csv');
-t_r2 = readtable('2021_06_18_14_51_05.csv');
-t_tt = readtable('2021_06_18_14_57_10.csv');
+t_ba = readtable('2021_07_02_13_25_46.csv');
+t_n1 = readtable('2021_07_02_13_32_56.csv');
+t_n2 = readtable('2021_07_02_13_39_25.csv');
+t_r1 = readtable('2021_07_02_13_46_15.csv');
+t_n3 = readtable('2021_07_02_13_54_04.csv');
+t_n4 = readtable('2021_07_02_14_01_26.csv');
+t_r2 = readtable('2021_07_02_14_08_10.csv');
+t_tt = readtable('2021_07_02_14_14_54.csv');
 
 %% Calculate finishing times
 distance = 0.4;
@@ -262,7 +262,7 @@ hold on
 scatter(2, trq_n1, 80, cN1, 'filled')
 scatter(3, trq_n2, 80, cN1, 'filled')
 scatter(4, trq_r1, 80, cR1, 'filled')
-scatter(5, trq_n3, 80, cN1, 'filled')
+scatter(5, trq_n3, 80, cN2, 'filled')
 scatter(6, trq_n4, 80, cN1, 'filled')
 scatter(7, trq_r2, 80, cR1, 'filled')
 scatter(8, trq_tt, 80, cTT, 'filled')
@@ -288,8 +288,8 @@ ylabel('Mean Torque (N m)')
 
 %% Export figures
 cd(resDir)
-export_fig(fig1,'fig_pilot04_finishingTimes','-png','-eps','-cmyk','-r600')
-export_fig(fig2,'fig_pilot04_timeSeries','-png','-eps','-cmyk','-r600')
-export_fig(fig3,'fig_pilot04_meanCadence','-png','-eps','-cmyk','-r600')
-export_fig(fig4,'fig_pilot04_meanPower','-png','-eps','-cmyk','-r600')
-export_fig(fig5,'fig_pilot04_meanTorque','-png','-eps','-cmyk','-r600')
+export_fig(fig1,'fig_pilot05_finishingTimes','-png','-eps','-cmyk','-r600')
+export_fig(fig2,'fig_pilot05_timeSeries','-png','-eps','-cmyk','-r600')
+export_fig(fig3,'fig_pilot05_meanCadence','-png','-eps','-cmyk','-r600')
+export_fig(fig4,'fig_pilot05_meanPower','-png','-eps','-cmyk','-r600')
+export_fig(fig5,'fig_pilot05_meanTorque','-png','-eps','-cmyk','-r600')
