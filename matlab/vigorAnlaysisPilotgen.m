@@ -17,15 +17,14 @@ cd(datDir)
 addpath(genpath(codDir));
 
 % pilot 4
-
-t_ba = readtable('2021_06_18_14_15_23.csv');
-t_n1 = readtable('2021_06_18_14_20_37.csv');
-t_n2 = readtable('2021_06_18_14_25_44.csv');
-t_r1 = readtable('2021_06_18_14_34_13.csv');
-t_n3 = readtable('2021_06_18_14_40_57.csv');
-t_n4 = readtable('2021_06_18_14_45_20.csv');
-t_r2 = readtable('2021_06_18_14_51_05.csv');
-t_tt = readtable('2021_06_18_14_57_10.csv');
+% t_ba = readtable('2021_06_18_14_15_23.csv');
+% t_n1 = readtable('2021_06_18_14_20_37.csv');
+% t_n2 = readtable('2021_06_18_14_25_44.csv');
+% t_r1 = readtable('2021_06_18_14_34_13.csv');
+% t_n3 = readtable('2021_06_18_14_40_57.csv');
+% t_n4 = readtable('2021_06_18_14_45_20.csv');
+% t_r2 = readtable('2021_06_18_14_51_05.csv');
+% t_tt = readtable('2021_06_18_14_57_10.csv');
 
 %pilot5 
 % t_ba = readtable('2021_07_02_13_25_46.csv');
@@ -46,6 +45,16 @@ t_tt = readtable('2021_06_18_14_57_10.csv');
 % t_n4 = readtable('2021_07_07_13_50_01.csv');
 % t_r2 = readtable('2021_07_07_13_54_07.csv');
 % t_tt = readtable('2021_07_07_13_59_11.csv');
+
+%pilot7
+t_ba = readtable('2021_07_30_11_50_04.csv');
+t_n1 = readtable('2021_07_30_11_55_47.csv');
+t_n2 = readtable('2021_07_30_12_02_05.csv');
+t_r1 = readtable('2021_07_30_12_09_22.csv');
+t_n3 = readtable('2021_07_30_12_14_37.csv');
+t_n4 = readtable('2021_07_30_12_20_32.csv');
+t_r2 = readtable('2021_07_30_12_26_07.csv');
+t_tt = readtable('2021_07_30_12_32_02.csv');
 
 t_dat = {t_ba, t_n1, t_n2, t_r1, t_n3, t_n4, t_r2, t_tt};
 
@@ -356,8 +365,8 @@ ylabel('Peak Acceleration (m s^-2)')
 %% Export figures
 keyboard
 cd(resDir)
-export_fig(fig1,'fig_pilot05_finishingTimes','-png','-eps','-cmyk','-r600')
-export_fig(fig2,'fig_pilot05_timeSeries','-png','-eps','-cmyk','-r600')
-export_fig(fig3,'fig_pilot05_meanCadence','-png','-eps','-cmyk','-r600')
-export_fig(fig4,'fig_pilot05_meanPower','-png','-eps','-cmyk','-r600')
-export_fig(fig5,'fig_pilot05_meanTorque','-png','-eps','-cmyk','-r600')
+export_fig(fig1,'fig_pilot07_finishingTimes','-png','-eps','-cmyk','-r600')
+export_fig(fig2,'fig_pilot07_timeSeries','-png','-eps','-cmyk','-r600')
+export_fig(fig3,'fig_pilot07_meanCadence','-png','-eps','-cmyk','-r600')
+export_fig(fig4,'fig_pilot07_meanPower','-png','-eps','-cmyk','-r600')
+export_fig(fig5,'fig_pilot07_meanTorque','-png','-eps','-cmyk','-r600')
