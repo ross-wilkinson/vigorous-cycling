@@ -5,7 +5,7 @@
 clear; clc; close all
 
 %% Set directories
-expDir = '/Users/rosswilkinson/Google Drive/projects/vigorous-cycling/';
+expDir = '..';
 datDir = [expDir '/data'];
 codDir = [expDir '/matlab'];
 docDir = [expDir '/docs'];
