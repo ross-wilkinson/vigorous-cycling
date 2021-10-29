@@ -1,2 +1,2 @@
 # vigorous-cycling
- repor for vigorous cycling project
+ repo for vigorous cycling project
